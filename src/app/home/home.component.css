@@ -1,0 +1,18 @@
+.shadowe {
+    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.20); 
+    margin-top: 20px;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+}
+
+.boxed{
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+}
+
+.center{
+    margin-left: auto; 
+    margin-right: auto;
+}
