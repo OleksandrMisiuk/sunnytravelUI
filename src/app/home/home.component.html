@@ -39,71 +39,122 @@
     </div>
 </div>
 <div class="col-md-8 center my-4">
-    <form>
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
         <div class="form-row">
             <div class="from-group col">
-                <select id="inputState" class="form-control">
-                    <option selected>Country</option>
-                    <option>...</option>
+                <select id="inputState" class="form-control" formControlName="country">
+                    <option value="" disabled selected>Country</option>
+                    <option value="">-</option>
+                    <option value="Egypt">Egypt</option>
                 </select>
             </div>
             <div class="from-group col">
-                <select id="inputState" class="form-control">
-                    <option selected>City</option>
-                    <option>...</option>
+                <select id="inputState" class="form-control" formControlName="city">
+                    <option value="" disabled selected>City</option>
+                    <option value="">-</option>
+                    <option value="Kom Jombo">Kom Jombo</option>
+                    <option value="Kom Ombo">Kom Ombo</option>
                 </select>
             </div>
             <div class="from-group col-md-2">
-                <select id="inputState" class="form-control">
-                    <option selected>Duration</option>
-                    <option>...</option>
+                <select id="inputState" class="form-control" formControlName="duration">
+                    <option value="" disabled selected>Duration</option>
+                    <option value="">-</option>
+                    <option value="5">5</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
                 </select>
             </div>
             <div class="from-group row" style="padding-left: 1.2rem;">
-                <input class="form-control col-md-8" matInput [matDatepicker]="picker" placeholder="Choose a date">
+                <input class="form-control col-md-8" matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="dateDepart">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </div>
         </div>
         <div class="form-row my-2">
             <div class="from-group col-md-3">
-                <select id="inputState" class="form-control">
-                    <option selected>Room type</option>
-                    <option>...</option>
+                <select id="inputState" class="form-control" formControlName="roomType">
+                    <option value="" disabled selected>Room type</option>
+                    <option value="">-</option>
+                    <option value="Luxe">Luxe</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Standard">Standard</option>
                 </select>
             </div>
             <div class="from-group col-md-3">
-                <select id="inputState" class="form-control">
-                    <option selected>Meal type</option>
-                    <option>...</option>
+                <select id="inputState" class="form-control" formControlName="meal">
+                    <option value="" disabled selected>Meal type</option>
+                    <option value="">-</option>
+                    <option value="OB">Only Bed</option>
+                    <option value="BB">Bed and Breakfast</option>
+                    <option value="HB">Half Board</option>
+                    <option value="FB">Full Board</option>
+                    <option value="AL">All Inclusive</option>
+
                 </select>
             </div>
             <div class="from-group col-md-3">
-                <input type="number" class="form-control" placeholder="Number of people">
+                <input type="number" class="form-control" placeholder="Number of people" formControlName="numberOfPeople">
             </div>
-            <div class="from-group col-md-2">
-                <select id="inputState" class="form-control">
-                    <option selected>Hotel rating</option>
-                    <option>...</option>
+            <div class="from-group col-md-3">
+                <select id="inputState" class="form-control" formControlName="hotelRating">
+                    <option value="" disabled selected>Hotel rating</option>
+                    <option value="">-</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
                 </select>
             </div>
         </div>
         <div class="form-row my-2">
             <div class="form-check form-check-inline col-md-2 offset-md-3 boxed">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" formControlName="insurance">
                 <label class="form-check-label" for="inlineCheckbox1">Insurance</label>
             </div>
             <div class="form-check form-check-inline col-md-2 boxed">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" formControlName="transfer">
                 <label class="form-check-label" for="inlineCheckbox1">Transfer</label>
             </div>
             <div class="form-check form-check-inline col-md-2 boxed">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" formControlName="visa">
                 <label class="form-check-label" for="inlineCheckbox1">Visa</label>
             </div>
         </div>
         <div class="col-md-2 center">
-        <button type="submit" class="btn btn-secondary col">Filter</button>
+        <button type="submit" class="btn btn-secondary col">Search</button>
         </div>
     </form>
+</div>
+<div *ngIf="tours" class="shadow-table m-5">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Country</th>
+            <th scope="col">City</th>
+            <th scope="col">Hotel</th>
+            <th scope="col">Date depart</th>
+            <th scope="col">Description</th>
+            <th scope="col">Seats</th>
+            <th scope="col">Room</th>
+            <th scope="col">Meal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tour of tours; let i = index" (dblclick)="onDblClickTourDetails(i)">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{tour.country}}</td>
+            <td>{{tour.city}}</td>
+            <td>{{tour.hotel}}</td>
+            <td>{{tour.dateDepart}}</td>
+            <td>{{tour.description}}</td>
+            <td>{{tour.numberOfPeople}}</td>
+            <td>{{tour.roomType}}</td>
+            <td>{{tour.meal}}</td>
+          </tr>
+        </tbody>
+      </table>
 </div>
