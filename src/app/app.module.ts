@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {AppRoutingModule} from './app-routing.module';
 import {
   MatButtonModule,
   MatDatepickerModule,
@@ -19,13 +19,15 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { TourDetailsComponent } from './tour-details/tour-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    TourDetailsComponent
   ],
   imports: [
     MatButtonModule,
@@ -40,6 +42,7 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
+    AppRoutingModule,
     ToastrModule.forRoot(
       {
         closeButton: true,
