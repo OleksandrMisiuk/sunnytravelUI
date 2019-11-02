@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ComponentMessageService } from '../component-message.service';
+import { Tour } from '../model/Tour';
 
 @Component({
   selector: 'app-tour-details',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TourDetailsComponent implements OnInit {
 
-  constructor() { }
+  tour: Tour;
+
+  constructor(private compMessage: ComponentMessageService) { }
 
   ngOnInit() {
+    this.compMessage.currentMessage.subscribe(message => this.tour = message)
+    console.log(this.tour);
   }
 
 }

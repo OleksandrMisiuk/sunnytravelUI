@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Tour } from '../model/Tour';
 import { TourService } from '../tour.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import { ComponentMessageService } from '../component-message.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
   checkoutForm;
   tours: Tour[];
   constructor( private formBuilder: FormBuilder,
-     private tourService: TourService, private route: ActivatedRoute, private router: Router) { 
+     private tourService: TourService, private route: ActivatedRoute, private router: Router, private compMessage: ComponentMessageService) { 
       this.checkoutForm = this.formBuilder.group({
         country: [''],
         city: [''],
@@ -82,7 +83,8 @@ export class HomeComponent implements OnInit {
 
   onDblClickTourDetails(id: number){
     console.log(id);
-    this.router.navigateByUrl("/tour/" + id);
+    this.compMessage.changeMessage(this.tours[id]);
+    this.router.navigateByUrl("/tour");
   }
 
 }
