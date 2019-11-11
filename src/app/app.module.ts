@@ -20,6 +20,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { TourDetailsComponent } from './tour-details/tour-details.component';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TourDetailsComponent } from './tour-details/tour-details.component';
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    TourDetailsComponent
+    TourDetailsComponent,
+    OrderComponent
   ],
   imports: [
     MatButtonModule,

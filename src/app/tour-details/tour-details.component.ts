@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ComponentMessageService } from '../component-message.service';
 import { Tour } from '../model/Tour';
+import { Preorder } from '../model/Preorder';
+import { TourService } from '../tour.service';
+import { Bill } from '../model/Bill';
 
 @Component({
   selector: 'app-tour-details',
@@ -10,12 +13,30 @@ import { Tour } from '../model/Tour';
 export class TourDetailsComponent implements OnInit {
 
   tour: Tour;
+  bill: Bill;
 
-  constructor(private compMessage: ComponentMessageService) { }
+  constructor(private compMessage: ComponentMessageService, private tourService: TourService) { }
 
   ngOnInit() {
     this.compMessage.currentMessage.subscribe(message => this.tour = message)
     console.log(this.tour);
+  }
+
+  getBill(packId: number, mealId: number, roomId: number, dCode: string){
+    var preorder = new Preorder();
+    preorder.packageId = packId;
+    preorder.mealId = mealId;
+    preorder.roomId = roomId;
+    preorder.discountCode = dCode;
+    console.log(preorder);
+    this.tourService.getBill(preorder).subscribe((res) => {
+      this.bill = res;
+      console.log(this.bill);
+    })
+  }
+
+  back(){
+    this.bill = null;
   }
 
 }
