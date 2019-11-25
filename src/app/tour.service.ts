@@ -23,6 +23,14 @@ export class TourService {
     .pipe(catchError(this.errorHandler));
   }
 
+  setOrder(preOrder: Preorder): any{
+    let headers = new HttpHeaders();
+    headers = headers.append('authorization', 'Bearer ' + localStorage.getItem('token'));
+    console.log(headers);
+    return this.http.post<any>('http://localhost:8080/packages/order', preOrder, {headers})
+    .pipe(catchError(this.errorHandler));
+  }
+
   errorHandler(error: HttpErrorResponse) {
     return throwError(error|| "Server error");
   }

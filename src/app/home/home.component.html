@@ -67,7 +67,8 @@
                 </select>
             </div>
             <div class="from-group row" style="padding-left: 1.2rem;">
-                <input class="form-control col-md-8" matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="dateDepart">
+                <input class="form-control col-md-8" matInput [matDatepicker]="picker" placeholder="Choose a date"
+                    formControlName="dateDepart">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </div>
@@ -91,11 +92,11 @@
                     <option value="HB">Half Board</option>
                     <option value="FB">Full Board</option>
                     <option value="AL">All Inclusive</option>
-
                 </select>
             </div>
             <div class="from-group col-md-3">
-                <input type="number" class="form-control" placeholder="Number of people" formControlName="numberOfPeople">
+                <input type="number" class="form-control" placeholder="Number of people"
+                    formControlName="numberOfPeople">
             </div>
             <div class="from-group col-md-3">
                 <select id="inputState" class="form-control" formControlName="hotelRating">
@@ -111,50 +112,190 @@
         </div>
         <div class="form-row my-2">
             <div class="form-check form-check-inline col-md-2 offset-md-3 boxed">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" formControlName="insurance">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"
+                    formControlName="insurance">
                 <label class="form-check-label" for="inlineCheckbox1">Insurance</label>
             </div>
             <div class="form-check form-check-inline col-md-2 boxed">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" formControlName="transfer">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"
+                    formControlName="transfer">
                 <label class="form-check-label" for="inlineCheckbox1">Transfer</label>
             </div>
             <div class="form-check form-check-inline col-md-2 boxed">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" formControlName="visa">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"
+                    formControlName="visa">
                 <label class="form-check-label" for="inlineCheckbox1">Visa</label>
             </div>
         </div>
         <div class="col-md-2 center">
-        <button type="submit" class="btn btn-secondary col">Search</button>
+            <button type="submit" class="btn btn-secondary col">Search</button>
         </div>
     </form>
 </div>
 <div *ngIf="tours" class="shadow-table m-5">
     <table class="table table-hover">
         <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Country</th>
-            <th scope="col">City</th>
-            <th scope="col">Hotel</th>
-            <th scope="col">Date depart</th>
-            <th scope="col">Description</th>
-            <th scope="col">Seats</th>
-            <th scope="col">Room</th>
-            <th scope="col">Meal</th>
-          </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Country</th>
+                <th scope="col">City</th>
+                <th scope="col">Hotel</th>
+                <th scope="col">Date depart</th>
+                <th scope="col">Description</th>
+                <th scope="col">Seats</th>
+                <th scope="col">Room</th>
+                <th scope="col">Meal</th>
+            </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let tour of tours; let i = index" (dblclick)="onDblClickTourDetails(i)">
-            <th scope="row">{{i + 1}}</th>
-            <td>{{tour.country}}</td>
-            <td>{{tour.city}}</td>
-            <td>{{tour.hotel}}</td>
-            <td>{{tour.dateDepart}}</td>
-            <td>{{tour.description}}</td>
-            <td>{{tour.numberOfPeople}}</td>
-            <td>{{tour.roomType}}</td>
-            <td>{{tour.meal}}</td>
-          </tr>
+            <tr *ngFor="let tour of tours; let i = index" (dblclick)="onDblClickTourDetails(i)">
+                <th scope="row">{{i + 1}}</th>
+                <td>{{tour.country}}</td>
+                <td>{{tour.city}}</td>
+                <td>{{tour.hotel}}</td>
+                <td>{{tour.dateDepart}}</td>
+                <td>{{tour.description}}</td>
+                <td>{{tour.numberOfPeople}}</td>
+                <td>{{tour.roomType}}</td>
+                <td>{{tour.meal}}</td>
+            </tr>
         </tbody>
-      </table>
+    </table>
 </div>
+<section>
+    <div class="team-wrapper"
+        style="background-image: url(http://new.sunnytravel.dp.ua/wp-content/uploads/beach-daylight-dock-1045913.jpg);">
+        <div class="container">
+            <div class="row p-5">
+                <div class="col-md-8 offset-md-2 text-center" style="color: rgb(204, 204, 204);">
+                    <h2>
+                        Why do people choose us?
+                    </h2>
+                    <h5>
+                        We provide europian service and quality level:
+                    </h5>
+                </div>
+            </div>
+            <div>
+                <div class="row" style="padding-bottom: 6vh;">
+                    <div class="col-xs-12 col-ms-6 col-sm-6" style="padding-bottom: 3vw;">
+                        <div class="card" style="max-width: 540px;">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    <img class="card-image-top filter-greyscale" style="width: 100%; height: 100%;"
+                                        src="http://new.sunnytravel.dp.ua/wp-content/uploads/926729b8de0becf-150x120.jpg">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Document preparing</h4>
+                                        <h6 class="card-text">Help you to prepare all nescessary documents.</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-ms-6 col-sm-6">
+                        <div class="card">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    <img class="card-image-top filter-greyscale" style="width: 100%; height: 100%;"
+                                        src="http://new.sunnytravel.dp.ua/wp-content/uploads/755022663966598-150x93.jpg">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Save your money</h4>
+                                        <h6 class="card-text">We read all the options and don't offer one package!</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-ms-6 col-sm-6">
+                        <div class="card">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    <img class="card-image-top filter-greyscale" style="width: 100%; height: 100%;"
+                                        src="http://new.sunnytravel.dp.ua/wp-content/uploads/вип-150x90.jpg">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h4 class="card-title">VIP-service</h4>
+                                        <h6 class="card-text">Provide special service level</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-ms-6 col-sm-6">
+                        <div class="card">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    <img class="card-image-top filter-greyscale" style="width: 100%; height: 100%;"
+                                        src="http://new.sunnytravel.dp.ua/wp-content/uploads/MICE-1-150x79.jpg">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Business</h4>
+                                        <h6 class="card-text">Oraganize missions or you and your employees</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hestia-ribbon section section-image"
+    style="background-image: url( http://new.sunnytravel.dp.ua/wp-content/uploads/dawn-dusk-evening-1210273.jpg);">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h2 class="hestia-title">
+                    Dreams come true.
+                    <br>
+                    Time to rest.
+                    <br>
+                    Time to travel.
+                    <br>
+                    Pay for your own now with interest-free installment payments!
+                    <br>
+                    Order package and save!
+                </h2>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hestia-clients-bar text-center back-white">
+    <div class="container">
+        <ul class="clients-bar-wrapper">
+            <li class="clients-bar-item"><a href="https://tcc.com.ua/" target="_blank"><img
+                        src="http://new.sunnytravel.dp.ua/wp-content/uploads/touristclub-logo-127x150.png" alt=""></a>
+            </li>
+            <li class="clients-bar-item"><img src="http://new.sunnytravel.dp.ua/wp-content/uploads/top_logo-150x64.png"
+                    alt=""></li>
+            <li class="clients-bar-item"><a href="https://tez-tour.com" target="_blank"><img
+                        src="http://new.sunnytravel.dp.ua/wp-content/uploads/Tez-150x150.png" alt=""></a></li>
+            <li class="clients-bar-item"><a href="https://www.mouzenidis.com" target="_blank"><img
+                        src="http://new.sunnytravel.dp.ua/wp-content/uploads/mouzenidis_3-150x61.jpg" alt=""></a></li>
+            <li class="clients-bar-item"><a href="http://pegast.com.ua" target="_blank"><img
+                        src="http://new.sunnytravel.dp.ua/wp-content/uploads/logo-pegas-150x150.gif" alt=""></a></li>
+            <li class="clients-bar-item"><a href="http://anextour.com.ua" target="_blank"><img
+                        src="http://new.sunnytravel.dp.ua/wp-content/uploads/aneks-tur-150x68.png" alt=""></a></li>
+            <li class="clients-bar-item"><a href="https://joinup.ua" target="_blank"><img
+                        src="http://new.sunnytravel.dp.ua/wp-content/uploads/joinup-logo-150x61.png" alt=""></a></li>
+            <li class="clients-bar-item"><a href="http://akkord-tour.com.ua" target="_blank"><img
+                        src="http://new.sunnytravel.dp.ua/wp-content/uploads/akkord-150x150.png" alt=""></a></li>
+            <li class="clients-bar-item"><a href="https://www.otpusk.com/search/turkey/" target="_blank"><img
+                        src="http://new.sunnytravel.dp.ua/wp-content/uploads/otpusk.gif" alt="Поиск туров в Турцию"></a>
+            </li>
+            <li class="clients-bar-item"><a href="http://coraltravel.ua" target="_blank"><img
+                        src="http://new.sunnytravel.dp.ua/wp-content/uploads/logo-coral-travel-150x32.png" alt=""></a>
+            </li>
+        </ul>
+        <div class="footer-copyright text-center">© 2019 Copyright:
+            <a href=""> SunnyTravel.com</a>
+          </div>
+    </div>
+</section>

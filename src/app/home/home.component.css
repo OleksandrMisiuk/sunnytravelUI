@@ -12,3 +12,88 @@
     border-radius: 4px;
 }
 
+.team-wrapper{
+    background-position: top center;
+    background-size: cover;
+    position: relative;
+}
+
+.filter-greyscale{
+    filter: grayscale(100%);
+}
+
+.hestia-ribbon {
+    background-attachment: fixed;
+    padding: 50px 0;
+    color: #ffffff;
+
+}
+
+.section, .section-image {
+    background-position: center center;
+    background-size: cover;
+    background-color: rgba(red, green, blue, 0.7);
+}
+
+.section-image {
+    position: relative;
+    color: rgb(255, 255, 255);
+}
+
+.section-image:after {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    content: "";
+  }
+
+
+.hestia-title {
+    padding-top: 30px;
+    margin-bottom: 30px;
+    padding: 0;
+    color: #ffffff;
+    font-family: Georgia, serif;
+    font-size: 44px;
+    font-weight: 800;
+    word-break: break-word;
+}
+
+h2{
+    line-height: 1.618;
+}
+
+.hestia-clients-bar {
+    padding: 30px 0;
+}
+.hestia-clients-bar .clients-bar-wrapper {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.hestia-clients-bar .clients-bar-wrapper li {
+    display: inline-block;
+    margin: 25px;
+    vertical-align: middle;
+}
+.hestia-clients-bar .clients-bar-wrapper li a {
+    display: block;
+    padding: 5px;
+}
+.hestia-clients-bar .clients-bar-wrapper li img {
+    max-width: 100%;
+    height: auto;
+}
+
+.hestia-clients-bar .row > div {
+    padding: 20px;
+}
+
+.back-white{
+    background-color: white;
+}
