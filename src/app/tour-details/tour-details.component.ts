@@ -14,6 +14,8 @@ export class TourDetailsComponent implements OnInit {
 
   tour: Tour;
   bill: Bill;
+  sent: boolean;
+  orderError: boolean;
 
   constructor(private compMessage: ComponentMessageService, private tourService: TourService) { }
 
@@ -31,7 +33,22 @@ export class TourDetailsComponent implements OnInit {
     console.log(preorder);
     this.tourService.getBill(preorder).subscribe((res) => {
       this.bill = res;
-      console.log(this.bill);
+      console.log(res);
+    })
+  }
+
+  getOrder(packId: number, mealId: number, roomId: number, dCode: string){
+    var preorder = new Preorder();
+    preorder.packageId = packId;
+    preorder.mealId = mealId;
+    preorder.roomId = roomId;
+    preorder.discountCode = dCode;
+    console.log(preorder);
+    this.tourService.setOrder(preorder).subscribe((res) => {
+      this.sent = true;
+    }, (error) =>{
+      this.orderError = true;
+      console.log(this.orderError);
     })
   }
 

@@ -20,7 +20,6 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { TourDetailsComponent } from './tour-details/tour-details.component';
-import { OrderComponent } from './order/order.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 
@@ -31,7 +30,6 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     HeaderComponent,
     HomeComponent,
     TourDetailsComponent,
-    OrderComponent,
     SignInComponent,
     SignUpComponent
   ],

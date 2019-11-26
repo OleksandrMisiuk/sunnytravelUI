@@ -103,6 +103,16 @@
             </tr>
         </tbody>
     </table>
+    <br>
+    <div *ngIf="sent" class="col-md-12 text-center alert alert-success">
+            Ticket sent to your email address and bounded to your account.
+            <br>
+            Please respond to finish order within 2 days.
+    </div>
+    <div *ngIf="orderError" class="col-md-12 text-center alert alert-danger">
+            Something went wrong. Please sign in and repeat or get in touch with technical support.
+    </div>
     <button class="btn btn-secondary col-md-2" (click)="back()">Back</button>
-    <button class="btn btn-success col-md-2 offset-md-8">Pay</button>
+    <button *ngIf="!sent" class="btn btn-success col-md-2 offset-md-8" (click)="getOrder(tour.packageId, tour.mealId, tour.roomId, '')">Pay</button>
+    <button *ngIf="sent" class="btn btn-success col-md-2 offset-md-8" [routerLink]="['/home']">Home</button>
 </div>
