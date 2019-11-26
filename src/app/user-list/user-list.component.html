@@ -1,0 +1,33 @@
+<div class="shadowe center shadow-table m-5">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Email</th>
+                <th>Roles</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="users">
+            <tr *ngFor="let user of users">
+                <td><strong>{{user.id}}</strong></td>
+                <td>{{user.username}}</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="roleButton btn btn-secondary dropdown-toggle" type="button"
+                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span *ngIf="user.roles == 0">Edit roles</span>
+                            <span *ngFor="let role of user.roles"
+                                class="rolesView"><b>(</b>{{role.name.replace('ROLE_','')}}<b>) </b></span>
+                        </button>
+                        <div *ngIf="user.roles" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <div *ngFor="let role of allRoles">
+                                <label for=""><input type="checkbox"
+                                        [checked]="getUserRoles(user, role)"
+                                        (change)="toggleEditable($event, role, user)"> {{role.name}}</label>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+    </table>
+</div>

@@ -22,6 +22,7 @@ import { HomeComponent } from './home/home.component';
 import { TourDetailsComponent } from './tour-details/tour-details.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     HomeComponent,
     TourDetailsComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    UserListComponent
   ],
   imports: [
     MatButtonModule,

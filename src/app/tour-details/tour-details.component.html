@@ -1,4 +1,4 @@
-<div *ngIf="!bill" class="col-md-6 center shadow-table">
+<div *ngIf="!bill" class="col-md-6 center shadow-table" style="margin-bottom: 5vh;">
     <table class="table">
         <tbody>
             <tr>
@@ -16,6 +16,10 @@
             <tr>
                 <th scope="row">Description</th>
                 <td align="center">{{tour.description}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Duration</th>
+                <td align="center">{{tour.duration}}</td>
             </tr>
             <tr>
                 <th scope="row">Seats</th>
