@@ -15,8 +15,14 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/user-list" style="color: black;">Users</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" style="color: black;">Account</a>
+          <a class="dropdown-item" href="/account" style="color: black;">Account</a>
         </div>
+      </li>
+      <li *ngIf='auth&&!admin'>
+        <a class="nav-link" href="/account" role="button" 
+          >
+          Account
+        </a>
       </li>
     </ul>
       <button *ngIf='!auth' class="btn btn-outline-success my-2 my-sm-0" [routerLink]="['/signin']" >Log In</button>

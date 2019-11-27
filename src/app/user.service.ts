@@ -57,4 +57,11 @@ export class UserService {
     .pipe(catchError(this.errorHandler));
   }
 
+  removeUsersTour(username: string): Observable<Boolean> {
+    let headers = new HttpHeaders;
+    headers = headers.append('authorization', 'Bearer ' + localStorage.getItem('token'));
+    return this.http.post<Boolean>('http://localhost:8080/packages/removeTour', username, { headers })
+    .pipe(catchError(this.errorHandler));
+  }
+
 }

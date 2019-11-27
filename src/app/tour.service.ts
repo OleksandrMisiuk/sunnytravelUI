@@ -26,8 +26,14 @@ export class TourService {
   setOrder(preOrder: Preorder): any{
     let headers = new HttpHeaders();
     headers = headers.append('authorization', 'Bearer ' + localStorage.getItem('token'));
-    console.log(headers);
     return this.http.post<any>('http://localhost:8080/packages/order', preOrder, {headers})
+    .pipe(catchError(this.errorHandler));
+  }
+
+  getUsersTour(username: String): Observable<Tour>{
+    let headers = new HttpHeaders();
+    headers = headers.append('authorization', 'Bearer ' + localStorage.getItem('token'));
+    return this.http.post<Tour>('http://localhost:8080/packages/getTour', username, {headers})
     .pipe(catchError(this.errorHandler));
   }
 

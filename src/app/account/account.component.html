@@ -1,0 +1,74 @@
+<div class="account">
+    <div class="text-center">
+        <h4>Tours</h4>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="text-center">
+                <img class="" src="/assets/hiclipart.com.png" style="width: 40%; height: 40%;">
+                <h5><br>{{username}}</h5>
+            </div>
+        </div>
+        <div *ngIf="tour" class="col-md-5 shadow-table" style="margin-bottom: 5vh;">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">Country</th>
+                        <td align="center">{{tour.country}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">City</th>
+                        <td align="center">{{tour.city}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Hotel</th>
+                        <td align="center">{{tour.hotel}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Description</th>
+                        <td align="center">{{tour.description}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Duration</th>
+                        <td align="center">{{tour.duration}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Seats</th>
+                        <td align="center">{{tour.numberOfPeople}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Room</th>
+                        <td align="center">{{tour.roomType}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Meal</th>
+                        <td align="center">{{tour.meal}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Sea distance</th>
+                        <td align="center">{{tour.seaDistance}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Hotel rating</th>
+                        <td align="center">{{tour.hotelRating}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Transfer</th>
+                        <td align="center">{{tour.transfer}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Insurance</th>
+                        <td align="center">{{tour.insurance}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Visa</th>
+                        <td align="center">{{tour.visa}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="col-md-2 center">
+                <button class="btn btn-secondary" (click)="removeTour()">Remove</button>
+            </div>
+        </div>
+    </div>
+</div>
